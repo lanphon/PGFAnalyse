@@ -1,0 +1,56 @@
+%\usepackage{xeCJK}%xelatex的中文支持，如果不添加此包中文断句和缩进将无法正常
+\usepackage[slantfont,boldfont]{xeCJK}%允许斜体和粗体
+\usepackage{fontspec}%字体设置相关
+%\usepackage[T1]{fontspec}%字体设置相关
+
+%\setmainfont[Mapping=tex-text]{Times New Roman}%英文默认字体,Serif(Roman)
+%% 即rmfamily
+%\setCJKmainfont{宋体}%中文默认字体,中文相对应的有宋体，仿宋，楷体和魏书
+%%\setsansfont{Arial}%英文无衬线字体，即sffamily,Sans Serif(Sans，没有，来自于法语)
+%\setsansfont{Verdana}%英文无衬线字体，即sffamily,Sans Serif(Sans，没有，来自于法语)
+%% 常见的无衬线字体有Tahoma,Verdana,Arial
+%\setCJKsansfont{黑体}%中文无衬线字体，即类似于黑体的效果
+%\setmonofont{Monaco}%英文等宽字体，即ttfamily,Monospace(Typewriter)
+%\setCJKmonofont{微软雅黑}%中文等宽字体
+
+\setmainfont[Mapping=tex-text]{Times New Roman}%英文默认字体,Serif(Roman)
+% 即rmfamily
+\setCJKmainfont[ItalicFont={Adobe Heiti Std}, BoldFont={Adobe Kaiti Std}]{Adobe Song Std}
+%中文默认字体,中文相对应的有宋体，仿宋，楷体和魏书
+
+\setsansfont{Arial}%英文无衬线字体，即sffamily,Sans Serif(Sans，没有，来自于法语)
+% 常见的无衬线字体有Tahoma,Verdana,Arial
+\setCJKsansfont[ItalicFont={Adobe Kaiti Std}, BoldFont={Adobe Fangsong Std}]{Adobe Heiti Std}
+%中文无衬线字体，即类似于黑体的效果
+
+\setmonofont{Monaco}%英文等宽字体，即ttfamily,Monospace(Typewriter)
+\setCJKmonofont{Adobe Thai}%中文等宽字体
+
+
+% 定义西文字体
+\newfontfamily\TimesNewRoman{Times New Roman}
+\newfontfamily\Blackadder{Blackadder ITC}%Blackadder ITC字体
+\newfontfamily\Brush{Brush Script MT}%
+\newfontfamily\Edwardian{Edwardian Script ITC}%
+%\newfontfamily\Freebooter{Freebooter Script}
+\newfontfamily\Freestyle{Freestyle Script}%
+\newfontfamily\French{French Script MT}
+\newfontfamily\Kunstler{Kunstler Script}%斜体风格，适合作为签名
+\newfontfamily\Vladimir{Vladimir Script}%斜体风格，很漂亮
+% 定义中文字体
+\setCJKfamilyfont{song}{SimSun}%宋体
+\setCJKfamilyfont{hei}{SimHei}%黑体
+\setCJKfamilyfont{kai}{KaiTi}%楷体
+\setCJKfamilyfont{fang}{FangSong}%仿宋
+\setCJKfamilyfont{xingkai}{STXingkai}%华文行楷
+
+\newcommand{\songti}{\CJKfamily{song}}%定义别名
+\newcommand{\heiti}{\CJKfamily{hei}}
+\newcommand{\kaiti}{\CJKfamily{kai}}
+\newcommand{\fangsong}{\CJKfamily{fang}}
+\newcommand{\xingkai}{\CJKfamily{xingkai}}
+% 定义各部分的字体
+\newcommand{\footnotefont}{\familydefault \footnotesize}     % 脚注字体
+%\newcommand{\footnotefont}{\songti\normalfont}     % 脚注字体
+% 定义字体大小，以符合中文习惯
+\newcommand{\wuhao}{\fontsize{10.5bp}{12.6pt plus .3pt minus .2pt}\selectfont}

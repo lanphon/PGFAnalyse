@@ -1,0 +1,93 @@
+
+\usepackage{tikz}
+% We need lots of libraries...
+\usetikzlibrary{%
+  arrows,%
+  calc,%
+  fit,%
+  patterns,%
+  plotmarks,%
+  shapes.geometric,%包含菱形等形状，可用于绘制流程图中判断节点
+  shapes.misc,%
+  shapes.symbols,%
+  shapes.arrows,%
+  shapes.callouts,%
+  shapes.multipart,%
+  shapes.gates.logic.US,%
+  shapes.gates.logic.IEC,%
+  er,%
+  automata,%
+  backgrounds,%
+  chains,%
+  topaths,%
+  trees,%
+  petri,%
+  mindmap,%
+  matrix,%
+  calendar,%
+  folding,%
+  fadings,%
+  through,%
+  positioning,%
+  scopes,%
+  decorations.fractals,%
+  decorations.shapes,%
+  decorations.text,%
+  decorations.pathmorphing,%
+  decorations.pathreplacing,%
+  decorations.footprints,%
+  decorations.markings,%
+  shadows}
+%最后一项必须直接跟},不能换行，否则会出错
+
+%我自己的流程图style，包括startstop(开始与结束框),passprocess(中间处理框
+%),decision(判断框)以及line(线条)四种元素。
+\tikzset{
+passprocess/.style={
+shade,
+rectangle,
+draw=red!50!black!40,
+%minimum width=50pt,
+%minimum height=20pt,
+minimum size=13pt,
+text width=2cm,%设置节点文本宽度达到自动换行的目的
+text badly centered,
+inner sep=2pt,%内容与边框之间的间距
+top color=white,
+bottom color=red!50!black!40,
+font=\ttfamily\scriptsize
+},
+startstop/.style={
+rectangle,%矩形
+rounded corners=5pt,%圆角半径5pt
+%minimum width=50pt,
+%minimum height=20pt,
+text centered,
+%为什么无法达到填充的效果？？
+text width=2cm,%设置节点文本宽度达到自动换行的目的
+draw=red!50!black!20,
+top color=white,
+bottom color=red!30!black!50,
+%fill=orange,
+%draw=red,
+font=\ttfamily\scriptsize
+},
+decision/.style={
+diamond,%形状，diamond为菱形
+shape aspect=2,%更扁平的菱形，aspect之设定菱形宽度和长度的比值
+%draw=green,%边框颜色
+draw=red!50!black!20,
+top color=white,
+bottom color=red!70!black!20,
+minimum size=13pt,
+%fill=lime,%设定填充颜色
+font=\ttfamily\scriptsize,%设定字体
+text centered%文字居中
+},%刚刚忘写了这个逗号，tex直接崩溃
+line/.style = {
+draw,
+->,
+%shorten>=2pt,
+thick
+}
+}

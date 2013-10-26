@@ -1,0 +1,131 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 这是我自己写的日志的sty文件
+% 主要是用到的一些包和字体的设置
+% 其他的一些也可以使用这个包
+% 目录方面的必须修正过来
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\input{inc/macrodef.tex}
+
+
+\usepackage{xcolor}
+\definecolor{mihuangse}{HTML}{FFFFF2}%米黄色，RGB为255,255,242，适合做背景色
+
+
+\input{inc/tikzplot.tex}%tikz包引用及设置，注意此路径相对于引用文件而言
+
+
+\usepackage{ulem}%一些关于下划线，双下环线，波浪线，删除线和斜删除线的宏包
+
+
+\usepackage{shapepar}%一个小小的能用于排版特殊形状段落的宏包
+%包括菱形，心形，六边形，五角星形，空心六边形和正方形集中预设好的格式
+%也可以添加定制参数来设定自己需要的形状，不过很麻烦。
+%菱形(diamondpar)，心形(heartpar}，六边形(circlepar)，五角星形(starpar)
+%空心六边形(nutpar)和正方形(squarepar)
+
+
+\usepackage{amsmath,amssymb,mathrsfs,amsthm} %amsmath放在 xltxtra 的前面引用。
+%提供数学相关的东西
+
+
+\usepackage{graphicx}%图片插入相关
+
+
+\usepackage{subfig}%子图插入，不知道宏包是不是这个名字
+%\usepackage{picins}%图文混排
+\usepackage{picinpar}%图文混排的另一个宏包，pinins默认木有
+
+
+%\usepackage{xunicode,xltxtra}
+% provides unicode character macros,xltxtra提供xetex logo
+%\defaultfontfeatures{Mapping=tex-text} %保证一些 tex 特殊字符正常使用
+
+
+\input{inc/fontset.tex}%字体（含中文）设置
+
+
+% 设置页面边距,top,bottem,left,right分别是上下左右边距
+% 但如果此项放在fancyhdr包使用之后，则fancyhdr并不改变
+% 必须放在fancyhdr包使用之前
+% 有时候需要左边大于右边，以方便装订
+%\usepackage[left=2.5cm,margin=2.5cm,headheight=1.5cm,footskip=1.5cm]{geometry}
+
+
+%\input{inc/titleset.tex}
+
+\input{inc/hyperset.tex}
+
+
+% lastpage宏包，可以获得最后一页页码，使用\pageref{LastPage}即可引用
+% attention:\pageref{LastPage}引用的是最后一页的页码，而不是总页码数，这两个概念
+% 你应该要正确的区分开来
+\usepackage{lastpage}
+
+\input{inc/fancyhdrset.tex}
+
+% 缩进
+\usepackage{indentfirst} 
+\setlength{\parindent}{2em} % indent 2em
+
+
+% Footnote
+\usepackage[perpage]{footmisc}
+\usepackage{footnpag} % footnote per page
+\usepackage{footnote}
+\let\ftnt=\footnote
+\renewcommand{\footnote}[1]{\ftnt{\footnotefont{#1}}} % footnote fontstyle
+
+
+\input{inc/listingsset.tex}
+
+%对于代码展示我习惯用listings宏包，段落内的则用verb命令，但verb字体不知道如何调
+%整，所以改用fancyvrb。fancyvrb可调整字体大小
+\usepackage{fancyvrb}
+\DefineShortVerb{\|}
+\fvset{
+fontsize=\footnotesize
+}
+
+% paralist宏包，提供了压缩列表compactitem,compactenum,compactdesc
+% 以及行间列表inparaitem,inparaenum,inparadesc
+\usepackage{paralist}
+
+%%%%%%%%%%%%%%%%%%       以上均为宏包引用和设置      %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%      之后则为文档本身的设置   %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 将默认的英文重定义为中文
+\renewcommand{\contentsname}{目录}
+\renewcommand{\listfigurename}{插图目录}
+\renewcommand{\listtablename}{表格目录}
+%\renewcommand{\refname}{参考文献} %book类没有
+%\renewcommand{\abstractname}{摘要} %book类没有
+\renewcommand{\indexname}{索引}
+\renewcommand{\tablename}{表}
+\renewcommand{\figurename}{图}
+\renewcommand{\partname}{部分}
+\renewcommand{\appendixname}{附录}
+\renewcommand{\today}{\number\year年\number\month月\number\day日}
+%\renewcommand{\verb}{\footnotesize\verb}
+
+
+% 行间距，段间距及其他长度的设定
+%\setlength{\baselineskip}{1.5\baselineskip}%设置行间距,还是默认的好
+%\renewcommand{\baselinestretch}{1.5}%设置段间距，还是默认的好
+\setlength{\itemsep}{-5pt} % item seperate too wide
+%\setcounter{secnumdepth}{-1}% No section numbers
+
+
+% 自己定义的一些命令和环境
+% 分割线命令
+\newcommand{\fengexian}[1]{
+{\centering \makebox[\textwidth][s]{\textcolor{red}{* * * * \mbox{#1} * * * *}}}}
+% 应该有空格，以便s选项正确断开相应的结构
+
+
+\pagecolor{mihuangse}%设置背景色，即PDF的背景色
+%\color{white}%设置前景色

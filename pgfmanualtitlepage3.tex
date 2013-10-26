@@ -1,0 +1,30 @@
+{
+		\parindent0pt
+				\null
+				\colorlet{mintgreen}{green!50!black!50}
+
+		\thispagestyle{empty}
+		\vskip3cm
+				\vfill
+				\hfil
+				\begin{tikzpicture}[overlay]
+				\coordinate (front) at (0,0);
+		\coordinate (horizon) at (0,.31\paperheight);
+		\coordinate (bottom) at (0,-.6\paperheight);
+		\coordinate (sky) at (0,.57\paperheight);
+		\coordinate (left) at (-.51\paperwidth,0);
+		\coordinate (right) at (.51\paperwidth,0);
+
+		\node [draw] at (0,0) {front};
+\node [draw] at (0,.31\paperheight) {horizon};
+\node [draw] at (0,-.6\paperheight) {bottom};
+\node [draw] at (0,.57\paperheight) {sky};
+\node [draw] at (-.51\paperwidth,0) {left};
+\node [draw] at (.51\paperwidth,0) {right};
+
+
+		\end{tikzpicture}
+		\vfill
+				\vbox{}
+		\clearpage
+}

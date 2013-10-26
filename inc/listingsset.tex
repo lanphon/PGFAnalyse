@@ -1,0 +1,35 @@
+% listings宏包，可设置源码环境，引用源码
+% 目前对中文注释支持不大好，需要改进
+\usepackage{listings}
+\lstset{
+basicstyle=\ttfamily\scriptsize, %五号等宽字体
+extendedchars=true,
+%keywordstyle=\color{blue},%关键字颜色
+%commentstyle=\color{green!30!black}, %注释颜色
+showspaces=false,          % 显示空格
+showstringspaces=true,    % 字符串中显示空格
+showtabs=false,            % 显示 TAB
+tabsize=2,                 % TAB 被当作两个空格
+captionpos=b,              % 标题位置
+breaklines=true,           % 自动断行
+breakatwhitespace=true,   
+basewidth={0.6em,0.45em},%设置字大小，默认0.6/0.45比较合适，过小显得拥挤
+backgroundcolor=\color{lightgray},%设置背景色
+framerule=0pt,%无边框
+frame=single,%设置背景形状，有none,top,bottom,lines,single,shadowbox等选项
+numbers=left,%标注在左边
+%xleftmargin=.5em,
+%xrightmargin=.5em,
+%aboveskip=1ex,
+%columns=flexible,        % 如果不指定等宽字体用这个
+%mathescape,
+escapeinside={\%*}{*)}
+}
+
+%vim语言关键字和注释设置
+\lstdefinelanguage{vim}
+{
+keywords={set,source,language},
+sensitive=false,
+morecomment=[l][keywordstyle]",
+}

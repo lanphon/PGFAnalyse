@@ -1,0 +1,16 @@
+% 页面设置相关
+\usepackage{fancyhdr}
+% 定义fancy页面设置
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+\lhead{page \thepage \hspace{1ex}of \pageref{LastPage}}%页眉左left of head
+\chead{\modeltitlecn}%页眉中center of head
+\rhead{\small\leftmark}%页眉右right of head
+\cfoot{第 \thepage \hspace{1ex}页，共 \pageref{LastPage} 页}%页脚中center of
+% foot
+\rfoot{}%页脚右right of foot
+\lfoot{}%页脚左left of foot
+\renewcommand{\headrulewidth}{1pt}  %页眉线宽，设为0可以去页眉线
+\setlength{\skip\footins}{0.5cm}    %脚注与正文的距离
+%\renewcommand{\footnotesize}{}      %设置脚注字体大小
+\renewcommand{\footrulewidth}{1pt}  %脚注线的宽度

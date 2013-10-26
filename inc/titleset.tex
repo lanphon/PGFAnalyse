@@ -1,0 +1,16 @@
+% 目录格式控制宏包引用及参数设定
+\usepackage{titletoc}%控制目录格式的宏包
+\usepackage{titlesec}
+
+\titlecontents{chapter}[2.8em]{\color{blue}\large\CJKfamily{hei}
+\addvspace{1.5ex}}
+{\contentslabel{2em}\hspace*{1.0em}}{\hspace*{-2.3em}}
+{\color{black}\titlerule*[0.8pc]{.}\contentspage}[\addvspace{0.5ex}]
+
+\titlecontents{section}[1.5em]{\color{blue}\normalsize\addvspace{1.0ex}}
+{\contentslabel{2em}\hspace*{1.0em}}{\hspace*{-3.3em}}
+{\color{black}\titlerule*[0.8pc]{}\contentspage}
+
+\titlecontents{subsection}[2.8em]{\color{blue}\normalsize}
+{\contentslabel{0.5em}\hspace*{1.0em}}{\hspace*{-3.3em}}
+{\color{black}\titlerule*[0.8pc]{.}\contentspage}

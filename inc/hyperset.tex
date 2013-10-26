@@ -1,0 +1,25 @@
+% Bookmark  (Chinese bookmark supported)
+\usepackage[xetex,
+%dvipdfmx,
+CJKbookmarks,
+pdfstartview=FitH, 
+bookmarksnumbered=true,
+bookmarksopen=true,
+colorlinks=true,%注释掉此项则交叉引用为彩色边框
+pdfborder=001,%注释掉此项则交叉引用为彩色边框
+linkcolor=black,
+citecolor=gray
+]{hyperref}
+
+%PDF元数据设置，属于hyperref宏包的内容，所有可选的内容在hyperrefmanual.pdf的第八
+%页
+%可以使用Adobe Acrobat查看这些元数据
+\hypersetup{
+pdftitle = {\modeltitlecn},%pdf标题
+pdfsubject = {\modeltitlecn \modelversion},%主题
+pdfkeywords = {\modelkeyword},%关键字
+pdfauthor = {\modelauthornet .<\modelmailedu>},%作者
+pdfcreator = {XeLaTeX with Hyperref Package},%不能使用latex的logo
+pdfproducer = {lanphon@bupt.edu.cn},
+%pdfpagemode=FullScreen%打开就是全屏，适用于beamer展示文档
+}
